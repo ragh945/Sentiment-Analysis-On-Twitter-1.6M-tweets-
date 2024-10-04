@@ -8,7 +8,7 @@ import nltk
 from PIL import Image
 
 st.title("Twitter Sentiment Analysis")
-image=Image.open(r"C:\Users\RAGHAVENDRA KUMAR\Downloads\Twitter_logo.png")
+image=Image.open("Twitter_logo.png")
 st.image(image,use_column_width=True)
 
 # Ensure NLTK stopwords and tokenizer are available
@@ -17,11 +17,11 @@ nltk.download('punkt')
 nltk.download('stopwords')
 
 # Load the pickled logistic regression model
-model_filename = r"C:\Users\RAGHAVENDRA KUMAR\Downloads\NaiveBayes_Tweets.pkl"
+model_filename ="NaiveBayes_Tweets.pkl"
 model = pickle.load(open(model_filename, 'rb'))
 
 # Load the TF-IDF Vectorizer (ensure you save this correctly during training)
-vectorizer_filename = r"C:\Users\RAGHAVENDRA KUMAR\Downloads\tfidf1_tweets.pkl"
+vectorizer_filename ="tfidf1_tweets.pkl"
 tfidf_vectorizer = pickle.load(open(vectorizer_filename, 'rb'))
 
 # Function to preprocess text (e.g., stemming or removing stopwords) to match the training preprocessing
